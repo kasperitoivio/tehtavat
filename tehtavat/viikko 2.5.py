@@ -2,11 +2,14 @@ leiviskat = float(input("Anna leiviskät: "))
 naulat = float(input("Anna naulat:" ))
 luodit = float(input("Anna luodit:" ))
 
-naulat_yht = leiviskat * 20 + naulat
-luodit_yht = naulat_yht * 32 + luodit
-grammat = luodit_yht * 13.3
+#muunnokset
+luoti_grammoina = 13.3
+naula_grammoina = 32 * luoti_grammoina
+leiviskat_grammoina = 20 * naula_grammoina
 
-kg = int(grammat // 1000)
-g = int(grammat % 1000)
+massa_grammoina = (leiviskat * leiviskat_grammoina + naulat * naulat_grammoina + luodit * luoti_grammoina)
 
-print(f"Massa nykymittojen mukaan: {kg} kilogrammaa ja {g} grammaa.")
+kilot = int(massa_grammoina // 1000)
+grammat = massa_grammoina % 1000
+
+print(f"{kilot} kilogrammaa ja {grammat} grammaa.")
